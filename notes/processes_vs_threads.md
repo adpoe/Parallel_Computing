@@ -63,3 +63,31 @@
 - Livelocked threads are unable to make further progress, but they are NOT blocked
 - Instead, they are too busy responding to each other to resume work
 
+
+# Multithreading
+- Re-entrant lock has same behavior as sync'd blocks
+- Extended features
+  * can make the lock fair --> prevent thread starvation. Sync'd blocks are unfair by default
+  * check whether given lock is held or not
+  * get list of threads waiting for given lock
+  * sync'd blocks don't require try/catch/finally
+
+
+# Semaphores
+- Dijkstra in 1962
+- ADT used for controlling accesss to a common resource
+- Important in OS
+- Record of how many units of a particular resource are available... wait until the resource becomes avail
+- Counting semaphore, allows an arbitrary resource count
+- Binary semaphores (0,1)
+- Counts HOW MANY resources are free
+- Does NOT count WHICH resources are free
+
+
+# Mutexes
+- Binary semaphore
+- Have concept of 'owner'
+- Only process that locked mutex is supposed to unlock it
+- Provide priority inversion safety --> possible to promote a higher priority task to the owner, if necessary
+- Can provide deletion safety
+
