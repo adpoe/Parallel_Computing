@@ -32,5 +32,16 @@ public class App {
 
         t1.start();
         t2.start();
+
+        // join means wait until these threads finish until
+        // we move to next command in main thread of execution (application thread)
+        try {
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        // application thread runs first, unless we run a join first
+        System.out.println("Finished the tasks...");
     }
 }

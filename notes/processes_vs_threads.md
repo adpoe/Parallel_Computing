@@ -50,4 +50,16 @@
 - (born, started, runs, dies)
 
 
+# Deadlock
+- 2 or more competing actions are waiting for the other to finish --> so neither ever can
+- Databases --> processes within each transaction update two rows, but in oppsoite order
+- OS --> When a process/thread enters a waiting state because a resource requested is being held by another waiting process, which in turn is waiting for another resource from another waiting process
+- Detect with a Directed Graph --> if cycle ==> deadlock
+- Use DFS to check if there is a cycle
+
+# Livelock
+- Threads can act in response to action of another thread
+- If the other thread's action is a response to action of ANTOHER thread --> livelock!
+- Livelocked threads are unable to make further progress, but they are NOT blocked
+- Instead, they are too busy responding to each other to resume work
 
