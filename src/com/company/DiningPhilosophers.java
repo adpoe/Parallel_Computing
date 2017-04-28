@@ -87,7 +87,7 @@ class Chopstick {
     public boolean pickUp(Philosopher philosopher, State state) throws InterruptedException {
         // try to acquire lock on this chopstick for 10ms
         if (lock.tryLock(10, TimeUnit.MILLISECONDS)) {
-            System.out.println(philosopher + "picked up " + state.toString() + " " + this);
+            System.out.println(philosopher + " picked up " + state.toString() + " " + this);
             return true; // if successful
         }
 
